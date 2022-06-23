@@ -1,0 +1,38 @@
+body{
+  font-size: .9em;
+}
+
+h1{
+      font-weight: normal;
+letter-spacing: -.25px;
+  margin: 0;
+      font-size: 1.5em;
+    }
+    
+
+#index{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.col{
+  padding: .5em 0;
+  width: 24%;
+  
+  h1{
+    padding: .5em 0;
+  }
+  ._content{
+  overflow-y: scroll;
+    min-height: 400px;
+  max-height: 300px;
+}
+  
+}
+
+
+.col:not(:last-of-type){
+  border-right: 1px solid #000;
+  
+}
