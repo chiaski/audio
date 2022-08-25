@@ -1,0 +1,144 @@
+@import "main";
+
+
+// NAV
+
+#nav {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .5em;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    font-family: $serif;
+    text-decoration: none;
+    padding: .25em;
+    color: inherit;
+    opacity: 0.8;
+    font-size: 1rem;
+  }
+
+  a:hover {
+    cursor: 1;
+    text-decoration: underline;
+  }
+
+}
+
+
+// INDEX
+
+#i {
+  margin-top: 40px;
+  padding: .5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  font-size: .75em;
+  counter-reset: boxes;
+
+  a,
+  .box {
+    display: inline-block;
+    width: 230px;
+    height: 230px;
+    margin-bottom: 1em;
+
+    @media only screen and (max-width: 768px) {
+      width: 50%;
+      height: 110px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 20%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+      width: 16.5%;
+    }
+
+  }
+
+  a .box {
+    width: 100%;
+    cursor: ne-resize;
+  }
+
+
+  .box * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .box {
+    position: relative !important;
+
+    h1 {
+      width: 90%;
+      padding-right: 1em;
+      line-height: 110%;
+      font-size: 1rem;
+      font-weight: normal;
+      font-family: $serif;
+      opacity: 0.8;
+      margin-bottom: .5em;
+      text-align: left;
+
+      @media only screen and (max-width: 768px) {
+        width: 75%;
+        line-height: 105%;
+      }
+    }
+
+    h2 {
+
+      letter-spacing: -1px;
+      font-size: 2.5rem;
+      font-family: $serif;
+      line-height: 90%;
+      margin-bottom: .5rem;
+    }
+
+    p {
+      font-size: .9em;
+      line-height: 120%;
+      width: 80%;
+      opacity: 0.6;
+      margin-bottom: .3em;
+
+      @media only screen and (max-width: 768px) {
+        font-size: .8em;
+      }
+
+    }
+
+
+    img {
+      margin: 0 auto;
+      max-height: calc(100% - 2em);
+      max-width: calc(100% - 2em);
+    }
+
+    audio {
+      display: block;
+      height: 30px;
+      max-width: 60%;
+      width: 140px;
+      background: #fff;
+    }
+
+
+    audio::-webkit-media-controls-enclosure {
+      background: none;
+    }
+
+
+  }
+
+}

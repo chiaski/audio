@@ -4,3 +4,8 @@
 .DS_Store
 .DS_Store
 .DS_Store
+*.woff2 2
+*.woff 2
+*.woff2
+*.woff
+*.map

@@ -1,0 +1,72 @@
+/* 
+
+    FONTS
+
+
+*/
+
+@font-face {
+  font-family: 'Times Now';
+  src: url('./fonts/TimesNow-LightItalic.woff2') format('woff2'),
+    url('./fonts/TimesNow-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Times Now';
+  src: url('./fonts/TimesNow-Light.woff2') format('woff2'),
+    url('./fonts/TimesNow-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Standard';
+  src: url('./fonts/Standard-Book.woff2') format('woff2'),
+    url('./fonts/Standard-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Standard';
+  src: url('./fonts/Standard-BookItalic.woff2') format('woff2'),
+    url('./fonts/Standard-BookItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+//    FONTS
+
+$sans: "Standard";
+$serif: "Times Now";
+
+//    COLORS
+
+$b: #67686A;
+$gray: #55585a;
+$gray-light: #7e8183;
+$gray-lighter: #eaebeb;
+
+//    COLORS  :  ACCENTS
+
+$p: #eb80ff;
+
+// MAIN
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $sans;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

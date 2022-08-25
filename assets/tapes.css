@@ -1,0 +1,168 @@
+/* 
+
+    FONTS
+
+
+*/
+@font-face {
+  font-family: "Times Now";
+  src: url("./fonts/TimesNow-LightItalic.woff2") format("woff2"), url("./fonts/TimesNow-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times Now";
+  src: url("./fonts/TimesNow-Light.woff2") format("woff2"), url("./fonts/TimesNow-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Standard";
+  src: url("./fonts/Standard-Book.woff2") format("woff2"), url("./fonts/Standard-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Standard";
+  src: url("./fonts/Standard-BookItalic.woff2") format("woff2"), url("./fonts/Standard-BookItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Standard";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nav {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5em;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+#nav a {
+  font-family: "Times Now";
+  text-decoration: none;
+  padding: 0.25em;
+  color: inherit;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+#nav a:hover {
+  cursor: 1;
+  text-decoration: underline;
+}
+
+#i {
+  margin-top: 40px;
+  padding: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 0.75em;
+  counter-reset: boxes;
+}
+#i a,
+#i .box {
+  display: inline-block;
+  width: 230px;
+  height: 230px;
+  margin-bottom: 1em;
+}
+@media only screen and (max-width: 768px) {
+  #i a,
+#i .box {
+    width: 50%;
+    height: 110px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #i a,
+#i .box {
+    width: 20%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #i a,
+#i .box {
+    width: 16.5%;
+  }
+}
+#i a .box {
+  width: 100%;
+  cursor: ne-resize;
+}
+#i .box * {
+  margin: 0;
+  padding: 0;
+}
+#i .box {
+  position: relative !important;
+}
+#i .box h1 {
+  width: 90%;
+  padding-right: 1em;
+  line-height: 110%;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "Times Now";
+  opacity: 0.8;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  #i .box h1 {
+    width: 75%;
+    line-height: 105%;
+  }
+}
+#i .box h2 {
+  letter-spacing: -1px;
+  font-size: 2.5rem;
+  font-family: "Times Now";
+  line-height: 90%;
+  margin-bottom: 0.5rem;
+}
+#i .box p {
+  font-size: 0.9em;
+  line-height: 120%;
+  width: 80%;
+  opacity: 0.6;
+  margin-bottom: 0.3em;
+}
+@media only screen and (max-width: 768px) {
+  #i .box p {
+    font-size: 0.8em;
+  }
+}
+#i .box img {
+  margin: 0 auto;
+  max-height: calc(100% - 2em);
+  max-width: calc(100% - 2em);
+}
+#i .box audio {
+  display: block;
+  height: 30px;
+  max-width: 60%;
+  width: 140px;
+  background: #fff;
+}
+#i .box audio::-webkit-media-controls-enclosure {
+  background: none;
+}
+
+/*# sourceMappingURL=tapes.css.map */
