@@ -9,3 +9,4 @@
 *.woff2
 *.woff
 *.map
+.DS_Store
