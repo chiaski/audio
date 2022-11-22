@@ -37,6 +37,23 @@ transition: .2s all linear;
     background:#fff;
     padding: .5em;
   }
+      
+      #notice{
+        position: fixed;
+        background:#fff;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #notice div{
+        white-space: pre-wrap;
+      }
     
       
     </style>
@@ -44,42 +61,66 @@ transition: .2s all linear;
   <body>
     
     <div id="notice">
-    
-
+      <div>
+      ₊˚ ✧ ‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿  ✧ ₊˚
+      ˚                                                                                                    ₊
+      ˚                                                                                                    ₊
+      ˚                                                                                                    .
+      ₊                                                                                                    ₊
+      .                                                                                                    ₊
+      ,                                                                                                    ₊
+      ˚                                   welcome to chia's                                    ₊
+      ˚                                    audio aquarium..                                     .
+      ˚                                                                                                    ₊
+      ˚                                                                                                    ₊
+      ˚                                                                                                    ₊
+      ˚               tap anywhere to begin annoying the fish                     .
+      ˚                                                                                                    ₊
+      ₊                                                                                                    ₊
+      ₊                                                                                                    ₊
+      ˚                                                                                                     ₊
+      ˚                                                                                                    ₊
+      ₊˚ ✧ ‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿୨୧‿︵‿  ✧ ₊˚
       
+      
+      
+      </div>
     </div>
     <br><br>
-    <center><br><br><button id="feed">feed the fish</button></center>
+    <center><br><br><button id="feed">feed the fish</button> <button onclick="shuffleTank()">shake the tank</button> </center>
     
-    <main>
+    <main id="tank">
     ˚<span title="boingo the betta chini">𓆛</span>             .<span title="george the clownfish">𓆞</span>  
                                          °               ｡
        °   ° 𓆞
-                                                                              𓆛 ˙              
-                                                                                                                        
+                                                                              𓆛 ˙              ｡   
+      𓆛                                                    𓆛                                                              𓆛         𓆞
       ˚<a href="radio.html" title="radio"><span>𓆛</span></a>                                                   
-                                                                     
+            ｡              <a href="https://ifyouknewmewouldyoulove.me/sounds.html" target="_blank" title="(old) sounds on ifyouknewmewouldyouloveme"><span>𓆛</span></a>                                                                  
+                                                           𓆞          
     <span title="bingus the atlantic salmon">𓆛</span>                                     ｡                                  𓆛 
                                                                                             
             ˙                                                                                
                                    ˙                        𓆛                                                                                    ˙
                  ｡                                                                           
                                                             ·                                                     
-                                                                                            
+       ｡               <a href="https://soundcloud.com/andhearts" target="_blank" title="andhearts, dj project"><span>𓆝</span></a>                                                                  ｡          
                                                                                                 
                                          𓆛                                                   
                                                                                              
-            ｡                                                                                
-                                                            𓆛                                
+            ｡              <a href="https://freesound.org/people/hotemogf/" target="_blank" title="field recordings on soundcloud"><span>𓆝</span></a>                                                                  
+                                                            𓆛                                            
                                                                                                    
                                                                                             
             ｡                                                                                
-                                                            𓆛                                
+                                                            <a href="https://soundcloud.com/hotemogf" target="_blank" title="hotemogf on soundcloud"><span>𓆝</span></a>                               
                                                                                             
                                                    ˙                                   ｡      
+            ｡              <a href="https://www.youtube.com/watch?v=4NZ8mDGiEJE" target="_blank" title="ambient at gather east rock 11/11/2022"><span>𓆛</span></a>                                                                  
                        𓆞                                                                                                                       ˚                                                                                                   ˙                                           
                                               𓆞                                              
-    
+               <a href="http://www.softmore.net" target="_blank" title="mp3 blog"><span>𓆝</span></a>                                                               
+       ｡               <a href="https://bandcamp.com/chiaski" target="_blank" title="bandcamp"><span>𓆝</span></a>                                                                  ｡          
   ｡                                                     𓆞                            𓆛         
                               ˙                                                              
            𓆞                       
@@ -136,13 +177,18 @@ transition: .2s all linear;
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <script type="text/javascript">
     
-      $(document).on("click", function(){
+      $(document).one("click", function(){
     var obj = document.createElement('audio');
     obj.src = 'assets/fishtank.mp3'; 
     obj.play(); 
+        
+        $("#notice").fadeOut("slow");
       });
       
   $( function() {
+    
+    // shuffle tank every reload
+    shuffleTank();
     
     $( document ).tooltip({track:true});
     var glug = document.createElement('audio');
@@ -174,6 +220,19 @@ transition: .2s all linear;
     
   });
     
+      
+      function shuffleTank(){
+        let tank = $("#tank").html();
+        let tankInput = tank.split(/\r?\n/);
+        
+        for (let i = tankInput.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [tankInput[i], tankInput[j]] = [tankInput[j], tankInput[i]];
+}
+        $("#tank").html(tankInput.join("\n"));
+      }
+      
+      
     </script>
   </body>
 </html>
